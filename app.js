@@ -10,7 +10,6 @@ app.use(express.static("public"));
 
 
 
-
 mongoose.connect("mongodb://localhost:27017/todolistDB", { useNewUrlParser: true , useUnifiedTopology: true });
 
 const itemsSchema = {
@@ -37,7 +36,6 @@ const listSchema = {
 };
 
 const List = mongoose.model("List", listSchema);
-
 
 
 
@@ -73,7 +71,6 @@ app.post("/", function(req, res){
   });
 
   if (listName === "Today") {
-
     item.save();
     res.redirect("/");
   } else {
@@ -127,7 +124,6 @@ app.post("/delete", function(req, res) {
       }
     });
   }
-
 });
 
 
